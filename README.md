@@ -1,6 +1,6 @@
 # Software-Sales-Pipeline
 
-
+ETL process
 The purpose of this research proposal is to investigate the integration of game theory, deep 
 learning, and business analytics for optimizing sales pipeline management in the software 
 industry. The proposed study aims to investigate the ways in which advanced analytics 
