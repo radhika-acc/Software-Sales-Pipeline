@@ -10,4 +10,4 @@ algorithms for strategic decision-making, deep learning models for predictive an
 business analytics for data-driven insights.
 
 
-Update config.json with your connection string.
+1. Update config.json with your connection string.
