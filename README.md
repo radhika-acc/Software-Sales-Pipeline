@@ -8,3 +8,6 @@ forecasting, deal prioritizing, and negotiating strategies. Businesses can gain 
 in an increasingly dynamic and competitive market landscape by utilizing game theory 
 algorithms for strategic decision-making, deep learning models for predictive analytics, and 
 business analytics for data-driven insights.
+
+
+Update config.json with your connection string.
