@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Deal Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150vh;
+        }
+        .form-box {
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-column {
+            float: left;
+            width: 50%;
+        }
+        .form-column label {
+            font-weight: bold;
+        }
+        .form-column select {
+            width: calc(100% - 6px);
+            padding: 8px;
+            margin-top: 4px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .center-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .center-button input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .center-button input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h1>Sales Deal Prediction</h1>
+            <form action="/predict" method="post">
+               <div class="form-column">
+                   
+                <!-- dd for selecting Authority -->
+                <label for="Authority">Authority:</label><br>
+                <select id="Authority" name="Authority">
+                    <option value="High">High</option>
+                    <option value="Mid">Mid</option>
+                    <option value="Low">Low</option>
+                </select><br><br>
+                <!-- dd for selecting Authority -->
+
+                <!-- radio buttons for selecting Company Size -->
+                <label for="Comp_size">Company Size:</label><br>
+                <select id="Comp_size" name="Comp_size">
+                    <option value="Big">Big</option>
+                    <option value="Mid">Mid</option>
+                    <option value="Small">Small</option>
+                </select><br><br>
+                <!-- radio buttons for selecting Company Size -->
+
+                <!-- dropdown menu for selecting Competitors -->
+                <label for="Competitors">Competitors:</label><br>
+                <select id="Competitors" name="Competitors">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="Unknown">Unknown</option>
+                </select><br><br>
+                <!-- dropdown menu for selecting Competitors -->
+
+                <!-- dropdown menu for selecting Purch_dept -->
+                <label for="Purch_dept">Is Purchasing Department:</label><br>
+                <select id="Purch_dept" name="Purch_dept">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="Unknown">Unknown</option>
+                </select><br><br>
+                <!-- dropdown menu for selecting Purch_dept -->
+
+                <!-- dropdown menu for selecting Budgt_alloc -->
+                <label for="Budgt_alloc">Is Budget Allocated:</label><br>
+                <select id="Budgt_alloc" name="Budgt_alloc">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="Unknown">Unknown</option>
+                </select><br><br>
+                <!-- dropdown menu for selecting Budgt_alloc -->
+
+                <!-- dropdown menu for selecting Forml_tend -->
+                <label for="Forml_tend">Is Formal Tender required:</label><br>
+                <select id="Forml_tend" name="Forml_tend">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="Unknown">Unknown</option>
+                </select><br><br>
+                <!-- dropdown menu for selecting Forml_tend -->
+
+                <!-- dropdown menu for selecting Request for Information -->
+                <label for="RFI">Requested for Information?</label><br>
+                <select id="RFI" name="RFI">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select><br><br>
+                <!-- dropdown menu for selecting Request for Information -->
+
+                <!-- dropdown menu for selecting Request for Information -->
+                <label for="RFP">Requested for Proposal?</label><br>
+                <select id="RFP" name="RFP">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select><br><br>
+                <!-- dropdown menu for selecting Request for Information -->
+
+                <!-- dropdown menu for selecting Growth of Client -->
+                <label for="Growth">Growth of Client?</label><br>
+                <select id="Growth" name="Growth">
+                    <option value="Growth">Growth</option>
+                    <option value="Stable">Stable</option>
+                    <option value="Slow down">Slow down</option>
+                    <option value="Unknown">Unknown</option>
+                </select><br><br>
+                <!-- dropdown menu for selecting Growth of Client -->
+
+                <!-- dropdown menu for selecting Positive attitude expressed -->
+                <label for="Posit_statm">Positive attitude expressed?</label><br>
+                <select id="Posit_statm" name="Posit_statm">
+                    <option value="Neutral">Neutral</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select><br><br>
+                <!-- dropdown menu for selecting Positive attitude expressed -->
+
+                </div>     
+              <div class="form-column">
+
+                <!-- dropdown menu for selecting Source -->
+                <label for="Source">Source:</label><br>
+                <select id="Source" name="Source">
+                    <option value="Referral">Referral</option>
+                    <option value="Joint past">Joint past</option>
+                    <option value="Event">Event</option>
+                    <option value="Online form">Online form</option>
+                    <option value="Direct mail">Direct mail</option>
+                    <option value="Media">Media</option>
+                    <option value="Referral">Referral</option>
+                    <option value="Unknown">Unknown</option>
+                </select><br><br>
+                <!-- dropdown menu for selecting Source -->
+
+                <!-- dropdown menu for selecting Client -->
+                <label for="Client">Client:</label><br>
+                <select id="Client" name="Client">
+                    <option value="Current">Current</option>
+                    <option value="New">New</option>
+                    <option value="Past">Past</option>
+                </select><br><br>
+                <!-- dropdown menu for selecting Source -->
+
+                <!-- dropdown menu for selecting Scope -->
+                <label for="Scope">Scope:</label><br>
+                <select id="Scope" name="Scope">
+                    <option value="Clear">Current</option>
+                    <option value="Few questions">Few questions</option>
+                    <option value="Low">Low</option>
+                </select><br><br>
+                <!-- dropdown menu for selecting Scope -->
+
+                <!-- dropdown menu for selecting Does this deal have a strategic value -->
+                <label for="Strat_deal">Does this deal have a strategic value?</label><br>
+                <select id="Strat_deal" name="Strat_deal">
+                    <option value="Very important">Very important</option>
+                    <option value="Average important">Average important</option>
+                    <option value="Unimportant">Unimportant</option>
+                </select><br><br>
+                <!-- dropdown menu for selecting Does this deal have a strategic value -->
+
+                <!-- dropdown menu for selecting Partnership -->
+                <label for="Partnership">Partnership?</label><br>
+                <select id="Partnership" name="Partnership">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select><br><br>
+                <!-- dropdown menu for selecting Do we sell a different product -->
+
+                <!-- dropdown menu for selecting Do we sell a different product -->
+                <label for="Cross_sale">Do we sell a different product?</label><br>
+                <select id="Cross_sale" name="Cross_sale">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select><br><br>
+                <!-- dropdown menu for selecting Do we sell a different product -->
+
+                <!-- dropdown menu for selecting Increasing existing products? -->
+                <label for="Up_sale">Increasing existing products?</label><br>
+                <select id="Up_sale" name="Up_sale">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select><br><br>
+                <!-- dropdown menu for selecting Increasing existing products? -->
+
+                <!-- dropdown menu for selecting Type of Deal -->
+                <label for="Deal_type">Deal Type?</label><br>
+                <select id="Deal_type" name="Deal_type">
+                    <option value="Project">Project</option>
+                    <option value="Maintenance">Maintenance</option>
+                    <option value="Solution">Solution</option>
+                    <option value="Consulting">Consulting</option>
+                </select><br><br>
+                <!-- dropdown menu for selecting Type of Deal -->
+
+                <!-- dropdown menu for selecting Needs defined -->
+                <label for="Needs_def">Needs defined?</label><br>
+                <select id="Needs_def" name="Needs_def">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="Info gathering">Info gathering</option>
+                    <option value="Poor">Poor</option>
+                </select><br><br>
+                <!-- dropdown menu for selecting Needs defined -->
+
+                <!-- dropdown menu for selecting Attention to a client -->
+                <label for="Att_t_client">Attention to a client?</label><br>
+                <select id="Att_t_client" name="Att_t_client">
+                    <option value="Strategic account">Strategic account</option>
+                    <option value="Normal">Normal</option>
+                    <option value="First deal">First deal</option>
+                    <option value="Bad client">Bad client</option>
+                </select><br><br>
+                <!-- dropdown menu for selecting Attention to a client -->
+
+                </div>
+                <div class="center-button">
+                    <input type="submit" value="Predict">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
