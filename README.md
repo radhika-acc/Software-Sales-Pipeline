@@ -10,6 +10,9 @@ python - Python 3.11.5
 
 Grafana Dashboard:
 
+![Screenshot_3-4-2024_232313_localhost](https://github.com/radhika-acc/Software-Sales-Pipeline/assets/68595824/ba9d23ca-8cbb-40c5-b28f-29145975a875)
+
+![Screenshot_3-4-2024_232340_localhost](https://github.com/radhika-acc/Software-Sales-Pipeline/assets/68595824/f047bc7d-38db-4fa7-80ee-52c573425955)
 
 
 Web application:
