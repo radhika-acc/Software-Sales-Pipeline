@@ -81,7 +81,6 @@ class B2BSalesData(Base):
     Needs_def = Column(String(50))
     Att_t_client = Column(String(50))
     Status = Column(String(10))
-
     
 class ExecutionStatus(Base):
     __tablename__ = 'execution_status'

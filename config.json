@@ -8,8 +8,8 @@
     
     "grafana" : {
         "url": "http://localhost:3000/d",
-        "dashboard_id": "a80e2d4b-8c8f-48dc-b42f-6a44af04c770",
-        "dashboard_slug": "sales-pipeline-dashboard",
+        "dashboard_id": "d090e3da-ee13-4ca7-b510-a7d61706c735",
+        "dashboard_slug": "sales-dashboard",
         "org_id": 1
     
     }
